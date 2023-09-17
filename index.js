@@ -14,12 +14,12 @@ mongoose.connect(keys.mongoURI).then(result => {
     console.log("Connected to database");
 }).catch(err => console.log(err));
 require('./routes/authRoutes')(app);
-app.use(cookieSession({              // app.use is a middleware method => small functions that can be used to modify incoming requests
-                                     // to our app before going to route handlers
-    maxAge : 30 * 24 * 60 * 60 * 1000,
-    keys : [keys.cookieKey]
-}));
+// app.use(cookieSession({              // app.use is a middleware method => small functions that can be used to modify incoming requests
+//                                      // to our app before going to route handlers
+//     maxAge : 30 * 24 * 60 * 60 * 1000,
+//     keys : [keys.cookieKey]
+// }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
