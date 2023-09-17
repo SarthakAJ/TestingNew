@@ -8,9 +8,8 @@ require('./models/User.js');
 require('./services/passport.js');
 
 const PORT = process.env.PORT || 5000;
-
+app.listen(PORT);
 mongoose.connect(keys.mongoURI).then(result => {
-    app.listen(PORT);
     console.log("Server running through port : " + PORT);
     console.log("Connected to database");
 }).catch(err => console.log(err));
