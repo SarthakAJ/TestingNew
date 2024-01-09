@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;  // similar to destructuring const { Schema } = mongoose;
+const {Schema} = mongoose;  // similar to destructuring const { Schema } = mongoose;
 
 const userSchema = new Schema({
-    googleID : String
+    googleID : String,
+    credits : {
+        type : Number,
+        default : 0
+    }
 });
 
-mongoose.model("Users", userSchema);
+mongoose.model("users", userSchema);
+
